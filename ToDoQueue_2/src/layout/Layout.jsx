@@ -1,23 +1,20 @@
-//React libraries
-import {Outlet, useNavigation} from 'react-router-dom'
-
-//Components
-import Menu from '../components/Menu'
-import Footer from '../components/Footer'
-import Header from '../components/Header'
-
-import React from 'react'
+// Librerias de React
+import { Outlet, useNavigation } from "react-router-dom";
+// importar estilos
+// Componentes son los espacios que tiene cada página
+import Footer from "../components/Footer";
+import Header from "../components/Header";
 
 const Layout = () => {
+  const navigation = useNavigation();
   return (
-    <div className='Layout'>
+    <div className="Layout">
         <Header />
-        <Menu />
-        <main className='Main'>
+        <main className="Main">
             {
                 navigation.state === "loading" &&(
-                    <div className='Loading'>Loading...</div>
-                ) 
+                    <div className="Loading">Loading...</div>
+                )
             }
             <Outlet />
         </main>
