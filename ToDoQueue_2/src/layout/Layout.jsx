@@ -1,15 +1,17 @@
 // Librerias de React
 import { Outlet, useNavigation } from "react-router-dom";
 // importar estilos
+import '../styles/Layout.sass'
 // Componentes son los espacios que tiene cada página
-import Footer from "../components/Footer";
-import Header from "../components/Header";
+import Footer from "../components/Footer"
+import Header from "../components/Header"
+//import ToDoList from "../pages/ToDoList";
 
 const Layout = () => {
   const navigation = useNavigation();
   return (
     <div className="Layout">
-        <Header />
+      <Header id ="Header"/>
         <main className="Main">
             {
                 navigation.state === "loading" &&(
@@ -18,7 +20,7 @@ const Layout = () => {
             }
             <Outlet />
         </main>
-        <Footer />
+      <Footer className="master"/>
     </div>
   )
 }
